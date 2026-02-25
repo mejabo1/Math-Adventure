@@ -680,26 +680,6 @@ export const SCENARIOS: Record<string, StorySegment> = {
   },
 };
 
-const SUCCESS_OUTCOMES = [
-  "You pulled it off flawlessly. +10 Cool Points.",
-  "The teacher didn't notice a thing. You are a ninja.",
-  "Everyone laughed (with you, not at you). Success!",
-  "You actually learned something. Weird.",
-  "Crisis averted. You live to fight another period.",
-  "Your reputation in the class just went up.",
-  "Smooth operator. No detention for you."
-];
-
-const FAILURE_OUTCOMES = [
-  "The teacher stops talking and stares directly at you. Awkward.",
-  "You trip over your own backpack while trying to look cool.",
-  "The whole class goes silent. You hear a cricket chirp.",
-  "You got caught. That's a mark on your permanent record.",
-  "Your face turns bright red. You want to disappear.",
-  "The teacher sighs deeply. They look disappointed.",
-  "You accidentally knock over your desk. Chaos ensues."
-];
-
 export function getInitialStory(): StorySegment {
   return SCENARIOS['start'];
 }
@@ -714,15 +694,11 @@ export function getNextStorySegment(
   const nextScenarioId = choice.nextId;
   const nextScenario = SCENARIOS[nextScenarioId];
 
-  // Generate the outcome of the previous action
-  const outcome = wasCorrect 
-    ? SUCCESS_OUTCOMES[Math.floor(Math.random() * SUCCESS_OUTCOMES.length)]
-    : FAILURE_OUTCOMES[Math.floor(Math.random() * FAILURE_OUTCOMES.length)];
-
   return {
     id: nextScenario.id,
-    text: `${outcome} \n\n${nextScenario.text}`,
+    text: nextScenario.text,
     choices: nextScenario.choices,
-    isGameOver: false
+    isGameOver: nextScenario.isGameOver,
+    ending: nextScenario.ending
   };
 }

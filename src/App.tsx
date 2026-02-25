@@ -334,7 +334,7 @@ export default function App() {
                   className="flex items-center gap-2 bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-8 rounded-xl transition-colors shadow-lg shadow-indigo-900/20"
                 >
                   <RefreshCw size={20} />
-                  Try Again
+                  Play Again
                 </button>
               </div>
             </div>

@@ -471,6 +471,92 @@ export const SCENARIOS: Record<string, StorySegment> = {
     ]
   },
 
+  // --- RESTORED ENDINGS ---
+  ending_valedictorian: {
+    id: "ending_valedictorian",
+    text: "The teacher is so impressed by your questions that they recommend you for advanced placement. You are now the smartest kid in school.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "valedictorian",
+      title: "The Valedictorian",
+      description: "You outsmarted the system (and the teacher).",
+      type: "good"
+    }
+  },
+  ending_expelled: {
+    id: "ending_expelled",
+    text: "Demanding a lawyer in 6th grade didn't go over well. You are suspended indefinitely.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "expelled",
+      title: "Legal Trouble",
+      description: "You fought the law and the law won.",
+      type: "bad"
+    }
+  },
+  ending_detention_regular: {
+    id: "ending_detention_regular",
+    text: "You accept your fate. You spend the afternoon staring at a wall. It becomes your new routine.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "detention_regular",
+      title: "Detention Regular",
+      description: "You and the detention monitor are on a first-name basis.",
+      type: "neutral"
+    }
+  },
+  ending_secret_agent: {
+    id: "ending_secret_agent",
+    text: "You discover a hidden ventilation shaft behind the library books. You crawl inside and vanish from school forever, living in the walls.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "secret_agent",
+      title: "The Phantom Student",
+      description: "You found the school's secrets and became one of them.",
+      type: "secret"
+    }
+  },
+  ending_comedian: {
+    id: "ending_comedian",
+    text: "You refuse to stop the bit. The principal is laughing. The teacher is laughing. You are expelled, but you have a Netflix special now.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "comedian",
+      title: "Class Clown Legend",
+      description: "Worth it for the laughs.",
+      type: "good"
+    }
+  },
+  ending_artist: {
+    id: "ending_artist",
+    text: "The teacher frames your squirrel drawing. You fail math, but win the district art competition.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "artist",
+      title: "The Visionary",
+      description: "Math is temporary. Art is forever.",
+      type: "good"
+    }
+  },
+  ending_nap_champion: {
+    id: "ending_nap_champion",
+    text: "You fall asleep on the nurse's cot and wake up three years later. You are now in high school.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "nap_champion",
+      title: "Nap Champion",
+      description: "You slept through middle school. Lucky you.",
+      type: "secret"
+    }
+  },
+
   // --- NEW ENDINGS ---
   ending_math_champion: {
     id: "ending_math_champion",

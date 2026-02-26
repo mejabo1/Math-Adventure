@@ -34,6 +34,14 @@ export const ALL_ENDINGS = [
   { id: 'sorcerer', title: 'Sorcerer Supreme', description: 'Magic > Algebra.', type: 'good' },
   { id: 'diabeetus', title: 'The Spokesperson', description: 'You checked your blood sugar, and you checked it often.', type: 'secret' },
   { id: 'all_star', title: 'All Star', description: 'You got your game on. You got paid.', type: 'good' },
+  { id: 'save_america', title: 'The Art of the Deal', description: 'You made math great again.', type: 'good' },
+  { id: 'fired', title: 'You\'re Fired', description: 'Sad!', type: 'bad' },
+  { id: 'mars_colonist', title: 'CEO of Mars', description: 'Occupying Mars.', type: 'good' },
+  { id: 'x_ban', title: 'Permanently Suspended', description: 'Comedy is now legal on X, but not for you.', type: 'bad' },
+  { id: 'flamethrower', title: 'Not-A-Flamethrower', description: 'It\'s definitely a flamethrower.', type: 'bad' },
+  { id: 'meme_lord', title: 'Doge Millionaire', description: 'Much wow. Very math.', type: 'secret' },
+  { id: 'rapid_disassembly', title: 'Rapid Disassembly', description: 'It was just a test flight anyway.', type: 'bad' },
+  { id: 'stranded_moon', title: 'Moon Resident', description: 'In space, no one can hear you fail math.', type: 'bad' },
 ];
 
 export function EndingsModal({ unlockedEndings, onClose }: EndingsModalProps) {

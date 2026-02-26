@@ -527,8 +527,184 @@ export const SCENARIOS: Record<string, StorySegment> = {
       { text: "Run into the woods", nextId: "ending_feral" },
       { text: "Go to the playground", nextId: "playground_king" },
       { text: "Follow the smell of onions", nextId: "shrek_swamp" },
+      { text: "Board the golden helicopter", nextId: "trump_arrival" },
+      { text: "Jump in the Cybertruck", nextId: "musk_arrival" },
       { text: "Walk home", nextId: "ending_dropout" }
     ]
+  },
+
+  // --- MUSK BRANCH ---
+  musk_arrival: {
+    id: "musk_arrival",
+    text: "A stainless steel Cybertruck silently rolls up. The window shatters when it rolls down. Elon Musk leans out. 'Get in. We're going to the moon. Doge-1 is launching in 5 minutes and I need a co-pilot who understands trajectory.'",
+    choices: [
+      { text: "Get in the truck", nextId: "rocket_launch" },
+      { text: "Ask if it's electric", nextId: "rocket_launch" },
+      { text: "Tweet about it", nextId: "ending_x_ban" },
+      { text: "Ask for a flamethrower", nextId: "ending_flamethrower" }
+    ]
+  },
+  rocket_launch: {
+    id: "rocket_launch",
+    text: "You are strapped into a Starship rocket. 'We need to rescue stranded astronauts on the dark side of the moon,' Elon says. 'Calculate the delta-v required for orbital insertion!'",
+    choices: [
+      { text: "3000 m/s", nextId: "moon_landing" },
+      { text: "To the moon!", nextId: "moon_landing" },
+      { text: "420.69 m/s", nextId: "ending_meme_lord" },
+      { text: "Press the big red button", nextId: "ending_rapid_disassembly" }
+    ]
+  },
+  moon_landing: {
+    id: "moon_landing",
+    text: "You land perfectly. The astronauts are cheering. But wait! The rocket is out of fuel. Elon looks at you. 'Do you know how to synthesize methane from lunar regolith?'",
+    choices: [
+      { text: "Use chemistry class knowledge", nextId: "ending_mars_colonist" },
+      { text: "Call NASA", nextId: "ending_mars_colonist" },
+      { text: "Suggest using crypto", nextId: "ending_meme_lord" },
+      { text: "Panic", nextId: "ending_stranded_moon" }
+    ]
+  },
+
+  // --- MUSK ENDINGS ---
+  ending_mars_colonist: {
+    id: "ending_mars_colonist",
+    text: "You synthesize the fuel and save the day. Elon is so impressed he promotes you to CEO of Mars. You never have to take a math test again.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "mars_colonist",
+      title: "CEO of Mars",
+      description: "Occupying Mars.",
+      type: "good"
+    }
+  },
+  ending_x_ban: {
+    id: "ending_x_ban",
+    text: "Elon didn't like your tweet. He buys your school just to expel you. You are banned from X forever.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "x_ban",
+      title: "Permanently Suspended",
+      description: "Comedy is now legal on X, but not for you.",
+      type: "bad"
+    }
+  },
+  ending_flamethrower: {
+    id: "ending_flamethrower",
+    text: "He hands you a flamethrower. You accidentally set the Cybertruck on fire. It looks cool, but you're grounded.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "flamethrower",
+      title: "Not-A-Flamethrower",
+      description: "It's definitely a flamethrower.",
+      type: "bad"
+    }
+  },
+  ending_meme_lord: {
+    id: "ending_meme_lord",
+    text: "Elon laughs so hard he forgets to fly the rocket. You crash into a meme. You are now a Dogecoin millionaire.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "meme_lord",
+      title: "Doge Millionaire",
+      description: "Much wow. Very math.",
+      type: "secret"
+    }
+  },
+  ending_rapid_disassembly: {
+    id: "ending_rapid_disassembly",
+    text: "BOOM. The rocket explodes on the pad. 'Rapid Unscheduled Disassembly,' Elon notes. You are covered in soot.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "rapid_disassembly",
+      title: "Rapid Disassembly",
+      description: "It was just a test flight anyway.",
+      type: "bad"
+    }
+  },
+  ending_stranded_moon: {
+    id: "ending_stranded_moon",
+    text: "You panic. The oxygen runs out. You are now a permanent resident of the moon. At least the view is nice.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "stranded_moon",
+      title: "Moon Resident",
+      description: "In space, no one can hear you fail math.",
+      type: "bad"
+    }
+  },
+
+  // --- TRUMP BRANCH ---
+  trump_arrival: {
+    id: "trump_arrival",
+    text: "A golden helicopter lands on the baseball diamond. The door opens and Donald Trump steps out. 'I need a math genius. A really high IQ individual. The national debt is a mess. Can you solve for X?'",
+    choices: [
+      { text: "I can solve anything!", nextId: "trump_solve" },
+      { text: "Ask for a red hat", nextId: "trump_rally" },
+      { text: "Tell him he has small hands", nextId: "ending_fired" },
+      { text: "Ask for a small loan", nextId: "trump_loan" }
+    ]
+  },
+  trump_solve: {
+    id: "trump_solve",
+    text: "Tremendous. Okay, if I have 5 hotels, and I buy 3 golf courses, but the fake news says I only have 2, what is the truth?",
+    choices: [
+      { text: "The truth is whatever you say", nextId: "ending_save_america" },
+      { text: "8 properties", nextId: "ending_save_america" },
+      { text: "You have debt", nextId: "ending_fired" },
+      { text: "Use a sharpie to fix it", nextId: "ending_save_america" }
+    ]
+  },
+  trump_loan: {
+    id: "trump_loan",
+    text: "I like your style. You're a negotiator. I'll give you a small loan of a million dollars. What's the interest rate?",
+    choices: [
+      { text: "0%", nextId: "ending_save_america" },
+      { text: "10%", nextId: "ending_fired" },
+      { text: "The best rate", nextId: "ending_save_america" },
+      { text: "Negative interest", nextId: "ending_save_america" }
+    ]
+  },
+  trump_rally: {
+    id: "trump_rally",
+    text: "He puts a red hat on you. 'We're going to make algebra great again. Look at this crowd. Billions of people. How many do you count?'",
+    choices: [
+      { text: "The biggest crowd ever", nextId: "ending_save_america" },
+      { text: "About 12 people", nextId: "ending_fired" },
+      { text: "Billions and billions", nextId: "ending_save_america" },
+      { text: "Start a chant", nextId: "ending_save_america" }
+    ]
+  },
+
+  // --- TRUMP ENDINGS ---
+  ending_save_america: {
+    id: "ending_save_america",
+    text: "You used 6th grade math to fix the economy. The budget is balanced. The wall is built (out of algebra textbooks). You are the new Secretary of the Treasury.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "save_america",
+      title: "The Art of the Deal",
+      description: "You made math great again.",
+      type: "good"
+    }
+  },
+  ending_fired: {
+    id: "ending_fired",
+    text: "Trump points a finger at you. 'You're fired! Get him out of here!' You are escorted off the helicopter by the Secret Service.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "fired",
+      title: "You're Fired",
+      description: "Sad!",
+      type: "bad"
+    }
   },
 
   // --- SHREK BRANCH ---

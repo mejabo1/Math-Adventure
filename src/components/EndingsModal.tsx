@@ -32,6 +32,8 @@ export const ALL_ENDINGS = [
   { id: 'ragnarok', title: 'School of Ragnarok', description: 'No school. Only rubble.', type: 'neutral' },
   { id: 'multiverse', title: 'Dimension Hopper', description: 'Math works differently here.', type: 'secret' },
   { id: 'sorcerer', title: 'Sorcerer Supreme', description: 'Magic > Algebra.', type: 'good' },
+  { id: 'diabeetus', title: 'The Spokesperson', description: 'You checked your blood sugar, and you checked it often.', type: 'secret' },
+  { id: 'all_star', title: 'All Star', description: 'You got your game on. You got paid.', type: 'good' },
 ];
 
 export function EndingsModal({ unlockedEndings, onClose }: EndingsModalProps) {

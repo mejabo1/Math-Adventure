@@ -129,9 +129,101 @@ export const SCENARIOS: Record<string, StorySegment> = {
     choices: [
       { text: "Ask to go check it out", nextId: "hall_pass" },
       { text: "Hold your nose dramatically", nextId: "class_clown" },
-      { text: "Keep working", nextId: "boring_lecture" },
+      { text: "Wait... is that oatmeal?", nextId: "brimley_entrance" },
       { text: "Faint from the fumes", nextId: "nurse_office" }
     ]
+  },
+
+  // --- WILFORD BRIMLEY BRANCH ---
+  brimley_entrance: {
+    id: "brimley_entrance",
+    text: "The door flies open! Wilford Brimley rides in on a horse made of Quaker Oats boxes. 'STOP WHAT YOU'RE DOIN'!' he bellows. 'I need to talk to you about DIABEETUS!'",
+    choices: [
+      { text: "Scream 'DIABEETUS!' back", nextId: "ending_diabeetus" },
+      { text: "Ask about testing supplies", nextId: "medical_supplies" },
+      { text: "Offer him some oatmeal", nextId: "oatmeal_challenge" },
+      { text: "Hide under your desk", nextId: "detention_slip" }
+    ]
+  },
+  medical_supplies: {
+    id: "medical_supplies",
+    text: "He pats his pockets frantically. 'I check my blood sugar often. I do it because I want to stay healthy. But I can't calculate the co-pay! If Liberty Medical covers 80% of a $50 monitor, what do I owe?'",
+    choices: [
+      { text: "$10", nextId: "ending_insurance" },
+      { text: "$50", nextId: "brimley_rage" },
+      { text: "It's free if you call now", nextId: "ending_insurance" },
+      { text: "Check your mustache", nextId: "ending_mustache" }
+    ]
+  },
+  oatmeal_challenge: {
+    id: "oatmeal_challenge",
+    text: "'It's the right thing to do,' he says, producing a cauldron of steaming oats. 'Eat this wholesome breakfast to prove you aren't afraid of fiber!'",
+    choices: [
+      { text: "Eat it all", nextId: "ending_oatmeal" },
+      { text: "Add a pound of sugar", nextId: "brimley_rage" },
+      { text: "Refuse politely", nextId: "detention_slip" },
+      { text: "Ask for dinosaur eggs", nextId: "ending_oatmeal" }
+    ]
+  },
+  brimley_rage: {
+    id: "brimley_rage",
+    text: "Wilford's face turns beet red. 'You're not taking this seriously! High blood sugar is no joke!' He starts throwing testing strips everywhere.",
+    choices: [
+      { text: "Apologize", nextId: "medical_supplies" },
+      { text: "Run for your life", nextId: "hallway_chase" },
+      { text: "Catch them all", nextId: "ending_athlete" },
+      { text: "Call the nurse", nextId: "nurse_office" }
+    ]
+  },
+
+  // --- BRIMLEY ENDINGS ---
+  ending_diabeetus: {
+    id: "ending_diabeetus",
+    text: "You and Wilford scream 'DIABEETUS' in perfect harmony. The sheer sonic power shatters the windows. You are now the face of Liberty Medical.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "diabeetus",
+      title: "The Spokesperson",
+      description: "You checked your blood sugar, and you checked it often.",
+      type: "secret"
+    }
+  },
+  ending_insurance: {
+    id: "ending_insurance",
+    text: "Wilford nods solemnly. 'You're a smart kid. I'm signing you up for a lifetime supply of testing materials.' You are 12, but your retirement is set.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "insurance",
+      title: "Liberty Medical Member",
+      description: "Call now to receive your free meter.",
+      type: "good"
+    }
+  },
+  ending_mustache: {
+    id: "ending_mustache",
+    text: "You reach into his magnificent mustache and pull out the missing monitor. He sheds a single, oat-based tear. 'You found it.'",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "mustache",
+      title: "Mustache Explorer",
+      description: "It holds many secrets.",
+      type: "secret"
+    }
+  },
+  ending_oatmeal: {
+    id: "ending_oatmeal",
+    text: "You consume the oats. You feel... regular. Extremely regular. Wilford tips his hat and rides into the sunset. Your cholesterol is perfect.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "oatmeal",
+      title: "Oatmeal Baron",
+      description: "It was the right thing to do.",
+      type: "good"
+    }
   },
   pop_quiz: {
     id: "pop_quiz",
@@ -434,9 +526,89 @@ export const SCENARIOS: Record<string, StorySegment> = {
     choices: [
       { text: "Run into the woods", nextId: "ending_feral" },
       { text: "Go to the playground", nextId: "playground_king" },
-      { text: "Realize you have no plan", nextId: "principal_office" },
+      { text: "Follow the smell of onions", nextId: "shrek_swamp" },
       { text: "Walk home", nextId: "ending_dropout" }
     ]
+  },
+
+  // --- SHREK BRANCH ---
+  shrek_swamp: {
+    id: "shrek_swamp",
+    text: "You follow the scent to a muddy patch behind the gym. A familiar outhouse stands there. The door kicks open. 'WHAT ARE YOU DOING IN MY SWAMP?!' yells a large green ogre.",
+    choices: [
+      { text: "Scream 'SOMEBODY ONCE TOLD ME'", nextId: "sing_along" },
+      { text: "Ask about onion layers", nextId: "onion_math" },
+      { text: "Run away in terror", nextId: "hallway_chase" },
+      { text: "Ask for an autograph", nextId: "shrek_friend" }
+    ]
+  },
+  sing_along: {
+    id: "sing_along",
+    text: "Shrek sighs, but Donkey pops out and starts beatboxing. You belt out the lyrics. It's a musical number!",
+    choices: [
+      { text: "Hit the high note", nextId: "ending_all_star" },
+      { text: "Do the dance", nextId: "ending_all_star" },
+      { text: "Stop awkwardly", nextId: "shrek_swamp" },
+      { text: "Mic drop", nextId: "ending_all_star" }
+    ]
+  },
+  onion_math: {
+    id: "onion_math",
+    text: "'Ogres are like onions!' you say. 'If your radius is 50cm, what is your volume?' Shrek scratches his head. 'Is this common core?'",
+    choices: [
+      { text: "Calculate the volume", nextId: "ending_math_ogre" },
+      { text: "Peel the onion", nextId: "shrek_swamp" },
+      { text: "Say 'Parfaits are better'", nextId: "ending_swamp_friend" },
+      { text: "Just eat the onion", nextId: "nurse_office" }
+    ]
+  },
+  shrek_friend: {
+    id: "shrek_friend",
+    text: "Shrek grumbles but signs your textbook with a muddy finger. 'That'll do, student. That'll do.'",
+    choices: [
+      { text: "Say thanks", nextId: "ending_swamp_friend" },
+      { text: "Ask for waffles", nextId: "ending_swamp_friend" },
+      { text: "Hug him", nextId: "shrek_swamp" },
+      { text: "Leave before he gets mad", nextId: "outside_freedom" }
+    ]
+  },
+
+  // --- SHREK ENDINGS ---
+  ending_all_star: {
+    id: "ending_all_star",
+    text: "The musical number goes viral on TikTok. You, Shrek, and Donkey are now a famous boy band. School is out forever.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "all_star",
+      title: "All Star",
+      description: "You got your game on. You got paid.",
+      type: "good"
+    }
+  },
+  ending_math_ogre: {
+    id: "ending_math_ogre",
+    text: "Shrek respects your math skills. He lets you live in the swamp as his accountant. You calculate the trajectory of donkey-kicks.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "math_ogre",
+      title: "Swamp Accountant",
+      description: "It's all ogre now.",
+      type: "secret"
+    }
+  },
+  ending_swamp_friend: {
+    id: "ending_swamp_friend",
+    text: "You and Shrek make waffles in the morning. You're late for class, but who cares? You're friends with an ogre.",
+    choices: [],
+    isGameOver: true,
+    ending: {
+      id: "swamp_friend",
+      title: "Noble Steed",
+      description: "You found a fairytale ending.",
+      type: "good"
+    }
   },
   playground_king: {
     id: "playground_king",
